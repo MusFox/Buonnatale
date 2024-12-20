@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buon Natale Amore</title>
+    <style>
+        body {
+            background-color: red;
+            color: white;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+        h1 {
+            margin-top: 20%;
+        }
+        button {
+            background-color: green;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .heart {
+            position: absolute;
+            font-size: 50px;
+            animation: float 2s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-200px);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Buon Natale Amore ❤️</h1>
+    <button onclick="showHearts()">Cliccami 🎄</button>
+    <script>
+        function showHearts() {
+            for (let i = 0; i < 10; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart';
+                heart.innerText = '❤️';
+                document.body.appendChild(heart);
+                const x = Math.random() * window.innerWidth;
+                const y = Math.random() * window.innerHeight;
+                heart.style.left = `${x}px`;
+                heart.style.top = `${y}px`;
+                setTimeout(() => heart.remove(), 2000);
+            }
+        }
+    </script>
+</body>
+</html>
